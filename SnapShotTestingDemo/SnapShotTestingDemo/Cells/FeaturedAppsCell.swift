@@ -1,6 +1,5 @@
 import UIKit
 import NukeUI
-
 // NUKE Github : https://github.com/kean/Nuke
 
 class FeaturedAppsCell: UICollectionViewCell {
@@ -31,7 +30,6 @@ class FeaturedAppsCell: UICollectionViewCell {
     
     private lazy var appIconImageView: LazyImageView = {
         let imageView = LazyImageView()
-        imageView.priority = .high
         imageView.layer.cornerRadius = 10
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true

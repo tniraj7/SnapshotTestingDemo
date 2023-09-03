@@ -3,7 +3,7 @@ import XCTest
 import SnapshotTesting
 
 final class SnapShotTestingDemoTests: XCTestCase {
-    
+
     func test_snapshot_forFreeAppCell() {
         let cell = FreeAppCell(
             frame: CGRect(

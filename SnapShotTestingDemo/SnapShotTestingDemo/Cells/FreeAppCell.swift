@@ -13,7 +13,6 @@ class FreeAppCell: UICollectionViewCell {
     
     private lazy var appIconImageView: LazyImageView = {
         let imageView = LazyImageView()
-        imageView.priority = .high
         imageView.widthAnchor.constraint(equalToConstant: 64).isActive = true
         imageView.heightAnchor.constraint(equalToConstant: 64).isActive = true
         imageView.layer.cornerRadius = 10

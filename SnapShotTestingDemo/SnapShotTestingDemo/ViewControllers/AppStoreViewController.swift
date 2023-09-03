@@ -1,3 +1,6 @@
+// WWDC 2019 Video Link for UICollectionViewCompositionalLayout
+// https://developer.apple.com/videos/play/wwdc2019/215/
+
 import UIKit
 
 class AppStoreViewController: UIViewController {
