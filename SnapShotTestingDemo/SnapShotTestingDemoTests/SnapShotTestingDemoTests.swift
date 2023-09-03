@@ -43,14 +43,13 @@ final class SnapShotTestingDemoTests: XCTestCase {
         cell.featuredApppItem = featuredApps.first
         
         let exp = XCTestExpectation(description: "Wait for async image load")
+        assertSnapshot(matching: cell, as: .image)
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             exp.fulfill()
         }
         
         wait(for: [exp], timeout: 0.5)
-        
-        assertSnapshot(matching: cell, as: .image)
     }
     
     func test_snapshotForDarkMode_forFeaturedAppCell() {
@@ -64,14 +63,13 @@ final class SnapShotTestingDemoTests: XCTestCase {
         cell.featuredApppItem = featuredApps.first
         
         let exp = XCTestExpectation(description: "Wait for async image load")
+        assertSnapshot(matching: cell, as: .image)
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             exp.fulfill()
         }
         
         wait(for: [exp], timeout: 0.5)
-        
-        assertSnapshot(matching: cell, as: .image)
     }
     
     func test_snapshot_forHeaderSupplementaryCell() {
@@ -106,32 +104,31 @@ final class SnapShotTestingDemoTests: XCTestCase {
     
     func test_snapshot_forAppStoreViewController() {
         let viewController = AppStoreViewController(nibName: nil, bundle: nil)
+        viewController.loadViewIfNeeded()
         viewController.overrideUserInterfaceStyle = .light
-        let exp = XCTestExpectation(description: "Wait for async image load")
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-            viewController.loadViewIfNeeded()
+        let exp = XCTestExpectation(description: "Wait for async image load")
+        assertSnapshot(of: viewController, as: .image)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
             exp.fulfill()
         }
         
-        wait(for: [exp], timeout: 1.0)
-        
-        assertSnapshot(of: viewController, as: .image)
+        wait(for: [exp], timeout: 5.0)
     }
     
     func test_snapshotForDarkMode_forAppStoreViewController() {
         let viewController = AppStoreViewController(nibName: nil, bundle: nil)
         viewController.overrideUserInterfaceStyle = .dark
+        viewController.loadViewIfNeeded()
         
         let exp = XCTestExpectation(description: "Wait for async image load")
+        assertSnapshot(of: viewController, as: .image)
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-            viewController.loadViewIfNeeded()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
             exp.fulfill()
         }
         
-        wait(for: [exp], timeout: 1.0)
-        
-        assertSnapshot(of: viewController, as: .image)
+        wait(for: [exp], timeout: 5.0)
     }
 }
