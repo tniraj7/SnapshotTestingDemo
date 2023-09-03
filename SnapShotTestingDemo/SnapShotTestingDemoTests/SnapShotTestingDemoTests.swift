@@ -40,9 +40,9 @@ final class SnapShotTestingDemoTests: XCTestCase {
             )
         )
         cell.overrideUserInterfaceStyle = .light
+        cell.featuredApppItem = featuredApps.first
         
         let exp = XCTestExpectation(description: "Wait for async image load")
-        cell.featuredApppItem = featuredApps.first
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             exp.fulfill()
@@ -61,9 +61,9 @@ final class SnapShotTestingDemoTests: XCTestCase {
             )
         )
         cell.overrideUserInterfaceStyle = .dark
+        cell.featuredApppItem = featuredApps.first
         
         let exp = XCTestExpectation(description: "Wait for async image load")
-        cell.featuredApppItem = featuredApps.first
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             exp.fulfill()
