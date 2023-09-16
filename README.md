@@ -1,4 +1,4 @@
-# SnapshotTestingDemo 
+# SnapshotTestingDemo [![Build & Test](https://github.com/tniraj7/SnapshotTestingDemo/actions/workflows/CI.yml/badge.svg)](https://github.com/tniraj7/SnapshotTestingDemo/actions/workflows/CI.yml)
 
 # App Preview
 
